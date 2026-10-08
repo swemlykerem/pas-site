@@ -34,15 +34,17 @@
       <svg viewBox="31 20 450 472" aria-hidden="true"><path d="M243 20H131A100 100 0 0 0 31 120v210a100 100 0 0 0 100 100h112z"/><path d="M268 82h113a100 100 0 0 1 100 100v210a100 100 0 0 1-100 100H268z"/></svg>
       PAS
     </a>
-    <nav aria-label="Ana menü">
+    <nav id="ana-menu" aria-label="Ana menü">
       <a href="#aktarim">Aktarım</a>
       <a href="#nasil">Nasıl çalışır</a>
       <a href="#uygulamalar">Uygulamalar</a>
       <a href="#yapay-zeka">Yapay zekâ</a>
       <a href="#guvenlik">Güvenlik</a>
+      <a href="#ozellikler">Özellikler</a>
     </nav>
     <a class="dil" href="/en/" hreflang="en" lang="en">English</a>
-    <a class="dugme-kucuk" href="mailto:kerem@pasdevs.com">İletişim</a>
+    <a class="dugme-kucuk" href="#iletisim">İletişim</a>
+    <button class="menu-dugme" type="button" aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç"><span></span><span></span></button>
   </div>
 </header>
 
@@ -54,7 +56,7 @@
     <h1 class="belir"><span class="satir">Verinizden uygulamaya.</span><span class="satir renkli">Tek yerde.</span></h1>
     <p class="giris belir" style="--i:2">Sektörünüz ve büyüklüğünüz ne olursa olsun: Excel'iniz, CSV'leriniz ve e-Faturalarınız doğru ve eksiksiz aktarılır; satıştan insan kaynaklarına her birimin kendi panolarına, formlarına ve uygulamalarına dönüşür.</p>
     <div class="dugmeler belir" style="--i:3">
-      <a class="dugme" href="mailto:kerem@pasdevs.com">Görüşme isteyin</a>
+      <a class="dugme" href="#iletisim">Görüşme isteyin</a>
       <a class="bag" href="#nasil">Nasıl çalışır</a>
     </div>
   </div>
@@ -100,6 +102,72 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- öne çıkanlar: yatay kaydırıcı -->
+<section class="bolum one-cikanlar" id="one-cikanlar" aria-labelledby="oc-baslik">
+  <div class="kap"><h2 class="belir" id="oc-baslik">Öne çıkanlara göz atın.</h2></div>
+  <div class="serit" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Öne çıkanlar">
+    <article class="vitrin vitrin-aktarim" aria-roledescription="slide" aria-label="1 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="buyuk-denklem"><b>50</b><i>=</i><b class="mavi">44</b><i>+</i><b class="turuncu">6</b><i>+</i><b class="yesil">0</b></div>
+        <small>Örnek veri</small>
+      </div>
+      <div class="vitrin-metin"><h3>Her satırın hesabı verilir.</h3><p>Dosyadaki her satır alındı, atlandı ya da nedeniyle alınmadı olarak sayılır; tutar toplamı dosyayla karşılaştırılır.</p></div>
+    </article>
+    <article class="vitrin vitrin-uygulama" aria-roledescription="slide" aria-label="2 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="simge-bulutu">
+          <span class="simge" style="background:oklch(0.6 0.2 257)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <span class="simge" style="background:oklch(0.54 0.2 280)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg></span>
+          <span class="simge" style="background:oklch(0.7 0.13 228)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+          <span class="simge" style="background:oklch(0.63 0.22 10)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>
+          <span class="simge" style="background:oklch(0.62 0.07 58)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg></span>
+          <span class="simge" style="background:oklch(0.7 0.16 55)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <span class="simge" style="background:oklch(0.62 0.21 25)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></span>
+          <span class="simge" style="background:oklch(0.62 0.17 150)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        </div>
+      </div>
+      <div class="vitrin-metin"><h3>Hazır uygulamalar, tek tıkla.</h3><p>Satıştan insan kaynaklarına sık kullanılan uygulamalar birime kurulur ve hemen kullanılır.</p></div>
+    </article>
+    <article class="vitrin vitrin-sor" aria-roledescription="slide" aria-label="3 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="balon soru">Geçen ay en çok satış yaptığımız müşteri kim?</div>
+        <div class="balon cevap"><span class="cizgi"></span><span class="cizgi kisa"></span><small>Cevap, kaynağıyla birlikte</small></div>
+      </div>
+      <div class="vitrin-metin"><h3>Verinize sorun.</h3><p>Doğal dille sorun; cevap hangi veriden geldiğini gösterir.</p></div>
+    </article>
+    <article class="vitrin vitrin-guvenlik" aria-roledescription="slide" aria-label="4 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true"><span class="kalkan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></span></div>
+      <div class="vitrin-metin"><h3>Veriniz sizde kalır.</h3><p>PAS şirketinizin kendi bilgisayarında ya da sunucusunda çalışır; iş verisi orada tutulur.</p></div>
+    </article>
+    <article class="vitrin vitrin-birim" aria-roledescription="slide" aria-label="5 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="birimler">
+          <div style="background:linear-gradient(160deg,oklch(0.6 0.2 257),oklch(0.52 0.2 265))"><b>Satış</b><span>Siparişler ve faturalar</span></div>
+          <div style="background:linear-gradient(160deg,oklch(0.62 0.17 150),oklch(0.55 0.15 165))"><b>İnsan kaynakları</b><span>İzin ve masraf</span></div>
+          <div style="background:linear-gradient(160deg,oklch(0.7 0.16 55),oklch(0.62 0.18 40))"><b>Üretim</b><span>İş emirleri ve fire</span></div>
+        </div>
+      </div>
+      <div class="vitrin-metin"><h3>Herkes kendi işini görür.</h3><p>Her birim yalnız kendi ekranlarını, formlarını ve verisini görür.</p></div>
+    </article>
+  </div>
+  <div class="kap serit-denetim">
+    <div class="noktalar">
+      <button type="button" aria-label="Öne çıkana git: 1"></button>
+      <button type="button" aria-label="Öne çıkana git: 2"></button>
+      <button type="button" aria-label="Öne çıkana git: 3"></button>
+      <button type="button" aria-label="Öne çıkana git: 4"></button>
+      <button type="button" aria-label="Öne çıkana git: 5"></button>
+    </div>
+    <button class="oynat" type="button" data-duraklat="Kaydırmayı duraklat" data-oynat="Kaydırmayı başlat" aria-label="Kaydırmayı duraklat"><span></span></button>
+  </div>
+  <div class="kap rakamlar">
+    <div class="belir" style="--i:0"><strong class="renkli">4</strong><p>dosya biçimi: .xlsx, .xls, CSV ve e-Fatura XML</p></div>
+    <div class="belir" style="--i:1"><strong class="renkli">0</strong><p>sessiz kayıp: her satırın hesabı verilir</p></div>
+    <div class="belir" style="--i:2"><strong class="renkli">2</strong><p>model: biri taslağı hazırlar, öbürü denetler</p></div>
+    <div class="belir" style="--i:3"><strong class="renkli">2</strong><p>dil: Türkçe ve İngilizce</p></div>
   </div>
 </section>
 
@@ -222,6 +290,37 @@
       <div class="belir" style="--i:4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg><h3>Birim bazında yetki</h3><p>Her çalışan yalnız kendi biriminin ekranlarını ve verisini görür.</p></div>
       <div class="belir" style="--i:5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><h3>Onaylı yazma</h3><p>Veri kaydeden işlemler tanımladığınız onay kuralından geçer.</p></div>
     </div>
+    <figure class="sema belir" aria-labelledby="sema-baslik">
+      <figcaption id="sema-baslik">Veri nerede durur, nereye gider?</figcaption>
+      <div class="sema-akis">
+        <div class="sema-uc"><b>Çalışanlar</b><span>Tarayıcıdan; şirket ağından da bağlanabilir</span></div>
+        <div class="sema-ok"><span>şirket içi</span></div>
+        <div class="sema-sunucu">
+          <b>Şirketinizin bilgisayarı ya da sunucusu</b>
+          <div class="sema-cipler"><span class="ana-cip">PAS</span><span>Veritabanı</span><span>Giriş ve yetki</span><span>Denetim kaydı</span></div>
+          <small>İş verisi burada tutulur.</small>
+        </div>
+        <div class="sema-ok dis"><span>yalnız maskeli veri · sizin anahtarınız · aylık tavan</span></div>
+        <div class="sema-uc"><b>Claude</b><span>İsteğe bağlı; anahtar girmezseniz kullanılmaz</span></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- teknik özellikler -->
+<section class="bolum gri" id="ozellikler">
+  <div class="kap">
+    <h2 class="belir">Teknik özellikler.</h2>
+    <dl class="teknik">
+      <div class="belir"><dt>Veri kaynakları</dt><dd>.xlsx ve eski .xls; CSV (UTF-8 ya da Windows-1254, virgül ya da noktalı virgül ayraç, ondalık virgül); e-Fatura ve e-Arşiv XML.</dd></div>
+      <div class="belir"><dt>Aktarım</dt><dd>Yüklemeden önce ön izleme; satır satır hesap (alınan, atlanan, alınmayan ve nedeni); tutar mutabakatı; son yüklemeyi geri alma; alınmayan satırlar için Excel raporu.</dd></div>
+      <div class="belir"><dt>Uygulamalar</dt><dd>Satış siparişi, satın alma talebi, masraf, izin talebi, stok sayımı, üretim ve fire, bakım ve arıza, kalite kontrol; tarifinizden pano, ekran ve uygulama taslağı.</dd></div>
+      <div class="belir"><dt>Yapay zekâ</dt><dd>Claude (Anthropic), kendi anahtarınızla; aylık harcama tavanı; kaynağıyla cevap; taslağı bir model hazırlar, ikinci bir model denetler, siz onaylarsınız. Anahtarsız da çalışır.</dd></div>
+      <div class="belir"><dt>Erişim</dt><dd>Tarayıcıdan; şirket ağındaki diğer çalışanlar da bağlanabilir.</dd></div>
+      <div class="belir"><dt>Giriş ve yetki</dt><dd>Parola ve passkey; yönetici işlemlerinde passkey ile yeniden doğrulama; birim bazında yetki.</dd></div>
+      <div class="belir"><dt>Kayıt ve gizlilik</dt><dd>Zincirli denetim kaydı; yapay zekâya giden kişisel veri maskelenir; yurt dışı aktarım kaydı kendiliğinden tutulur.</dd></div>
+      <div class="belir"><dt>Kurulum ve dil</dt><dd>Şirketinizin kendi Windows bilgisayarı ya da sunucusu; Türkçe ve İngilizce arayüz.</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -229,21 +328,46 @@
 <section class="bolum ortali kapanis" id="iletisim">
   <div class="kap">
     <h2 class="belir">PAS'ı şirketinizde görelim.</h2>
-    <p class="giris belir" style="--i:1">Size gelelim, kendi verinizle gösterelim. Kurulum ve ilk aktarımı birlikte yapar, mutabakatı birlikte kontrol ederiz.</p>
-    <div class="dugmeler belir" style="--i:2">
-      <a class="dugme" href="mailto:kerem@pasdevs.com">Görüşme isteyin</a>
+    <p class="giris belir" style="--i:1">Üç adımda, birlikte.</p>
+    <ol class="surec">
+      <li class="belir" style="--i:0"><span class="no renkli">1</span><h3>Tanışalım</h3><p>Kısa bir görüşmede işinizi, birimlerinizi ve verinizi konuşuruz.</p></li>
+      <li class="belir" style="--i:1"><span class="no renkli">2</span><h3>Size gelelim</h3><p>Aynı ziyarette PAS'ı örnek şirketle gösterir, bilgisayarınıza ya da sunucunuza kurarız.</p></li>
+      <li class="belir" style="--i:2"><span class="no renkli">3</span><h3>Birlikte aktaralım</h3><p>İlk aktarımı birlikte yapar, mutabakatı birlikte kontrol ederiz.</p></li>
+    </ol>
+    <div class="dugmeler belir" style="--i:3">
+      <button class="dugme kopyala" type="button" data-kopyala="kerem@pasdevs.com" data-tamam="E-posta adresi kopyalandı">E-postayı kopyala</button>
       <a class="bag" href="mailto:kerem@pasdevs.com">kerem@pasdevs.com</a>
     </div>
+    <p class="kopya-durum" role="status" aria-live="polite"></p>
   </div>
 </section>
 
 </main>
 
 <footer class="alt">
-  <div class="kap">
+  <div class="kap alt-ust">
+    <div>
+      <a class="logo" href="/" aria-label="PAS"><svg viewBox="31 20 450 472" aria-hidden="true"><path d="M243 20H131A100 100 0 0 0 31 120v210a100 100 0 0 0 100 100h112z"/><path d="M268 82h113a100 100 0 0 1 100 100v210a100 100 0 0 1-100 100H268z"/></svg>PAS</a>
+      <p>Verinizden uygulamaya. Tek yerde.</p>
+    </div>
+    <nav aria-label="Bölümler">
+      <b>Bölümler</b>
+      <a href="#aktarim">Aktarım</a>
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#uygulamalar">Uygulamalar</a>
+      <a href="#yapay-zeka">Yapay zekâ</a>
+      <a href="#guvenlik">Güvenlik</a>
+      <a href="#ozellikler">Özellikler</a>
+    </nav>
+    <div>
+      <b>İletişim</b>
+      <a href="mailto:kerem@pasdevs.com">kerem@pasdevs.com</a>
+      <a href="/en/" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+  <div class="kap alt-son">
     <span>© 2026 PAS · Claude ile çalışır</span>
     <span>Bu site çerez kullanmaz ve ziyaretçi verisi toplamaz.</span>
-    <a href="/en/" hreflang="en" lang="en">English</a>
   </div>
 </footer>
 </body>

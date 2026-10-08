@@ -76,6 +76,162 @@
     cizgiler.forEach((c, i) => c.style.setProperty("--d", String(Math.min(1, Math.max(0, p * n - i)))));
   };
 
+  // Dar ekran menüsü: düğmeyle açılır; bağlantıya tıklayınca ya da Esc ile kapanır.
+  const menuDugme = document.querySelector(".menu-dugme");
+  if (menuDugme && ust) {
+    const kapat = () => {
+      ust.classList.remove("acik");
+      menuDugme.setAttribute("aria-expanded", "false");
+    };
+    menuDugme.addEventListener("click", () => {
+      menuDugme.setAttribute("aria-expanded", String(ust.classList.toggle("acik")));
+    });
+    ust.querySelectorAll("nav a").forEach((a) => a.addEventListener("click", kapat));
+    document.addEventListener("keydown", (e) => e.key === "Escape" && kapat());
+  }
+
+  // Menüde ekranın ortasındaki bölüm işaretlenir.
+  const menuBaglari = [...document.querySelectorAll(".ust nav a[href^='#']")];
+  const bolumGozcu = new IntersectionObserver(
+    (girdiler) => {
+      for (const g of girdiler) {
+        if (!g.isIntersecting) continue;
+        const hedef = g.target.id ? `#${g.target.id}` : "";
+        for (const a of menuBaglari) {
+          const etkin = a.getAttribute("href") === hedef;
+          a.classList.toggle("etkin", etkin);
+          if (etkin) a.setAttribute("aria-current", "true");
+          else a.removeAttribute("aria-current");
+        }
+      }
+    },
+    { rootMargin: "-45% 0px -50% 0px" },
+  );
+  // Menüde olmayan bölümler de izlenir: oraya gelince işaret kalkar.
+  document.querySelectorAll("main > section").forEach((b) => bolumGozcu.observe(b));
+
+  // Öne çıkanlar: yatay kaydırıcı. 6 sn'de bir ilerler; görünmüyorken, üzerindeyken, odaktayken
+  // ya da duraklatılınca durur. Hareket azaltma tercihinde kendiliğinden ilerlemez.
+  const vitrinBolum = document.querySelector(".one-cikanlar");
+  const serit = vitrinBolum && vitrinBolum.querySelector(".serit");
+  if (serit) {
+    const kartlar = [...serit.querySelectorAll(".vitrin")];
+    const noktalar = [...vitrinBolum.querySelectorAll(".noktalar button")];
+    const oynat = vitrinBolum.querySelector(".oynat");
+    const SURE = 6000;
+    let etkin = -1;
+    let oynuyor = !azalt;
+    let gorunur = false;
+    let ustunde = false;
+    let zaman = 0;
+
+    const zamanla = () => {
+      clearTimeout(zaman);
+      const calis = oynuyor && gorunur && !ustunde;
+      vitrinBolum.classList.toggle("oynuyor", calis);
+      if (calis) zaman = setTimeout(() => git((etkin + 1) % kartlar.length), SURE);
+    };
+    const isaretle = (i) => {
+      if (i === etkin) return;
+      etkin = i;
+      kartlar.forEach((k, j) => k.classList.toggle("etkin", j === i));
+      noktalar.forEach((n, j) => {
+        n.classList.toggle("etkin", j === i);
+        n.setAttribute("aria-current", j === i ? "true" : "false");
+      });
+      zamanla();
+    };
+    const git = (i) => {
+      const k = kartlar[i];
+      serit.scrollTo({
+        left: k.offsetLeft - (serit.clientWidth - k.offsetWidth) / 2,
+        behavior: azalt ? "auto" : "smooth",
+      });
+    };
+
+    const kartGozcu = new IntersectionObserver(
+      (girdiler) => {
+        for (const g of girdiler) if (g.isIntersecting) isaretle(kartlar.indexOf(g.target));
+      },
+      { root: serit, threshold: 0.6 },
+    );
+    kartlar.forEach((k) => kartGozcu.observe(k));
+    new IntersectionObserver(
+      ([g]) => {
+        gorunur = g.isIntersecting;
+        zamanla();
+      },
+      { threshold: 0.35 },
+    ).observe(serit);
+
+    noktalar.forEach((n, i) => n.addEventListener("click", () => git(i)));
+    const ustte = (deger) => () => {
+      ustunde = deger;
+      zamanla();
+    };
+    serit.addEventListener("pointerenter", ustte(true));
+    serit.addEventListener("pointerleave", ustte(false));
+    serit.addEventListener("focusin", ustte(true));
+    serit.addEventListener("focusout", ustte(false));
+    serit.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") git(Math.min(kartlar.length - 1, etkin + 1));
+      else if (e.key === "ArrowLeft") git(Math.max(0, etkin - 1));
+      else return;
+      e.preventDefault();
+    });
+    const oynatGuncelle = () => {
+      oynat.classList.toggle("durdu", !oynuyor);
+      oynat.setAttribute("aria-label", oynuyor ? oynat.dataset.duraklat : oynat.dataset.oynat);
+    };
+    oynat.addEventListener("click", () => {
+      oynuyor = !oynuyor;
+      oynatGuncelle();
+      zamanla();
+    });
+    oynatGuncelle();
+    isaretle(0);
+  }
+
+  // E-postayı kopyala: önce pano API'si, olmazsa seçip kopyalama; ikisi de olmazsa e-posta istemcisi.
+  const panoya = async (metin) => {
+    try {
+      await navigator.clipboard.writeText(metin);
+      return true;
+    } catch {
+      const alan = document.createElement("textarea");
+      alan.value = metin;
+      alan.setAttribute("readonly", "");
+      alan.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+      document.body.append(alan);
+      alan.select();
+      let tamam = false;
+      try {
+        tamam = document.execCommand("copy");
+      } catch {
+        tamam = false;
+      }
+      alan.remove();
+      return tamam;
+    }
+  };
+  const kopyaDurum = document.querySelector(".kopya-durum");
+  document.querySelectorAll("[data-kopyala]").forEach((d) => {
+    const ilk = d.textContent;
+    d.addEventListener("click", async () => {
+      if (!(await panoya(d.dataset.kopyala))) {
+        window.location.href = `mailto:${d.dataset.kopyala}`;
+        return;
+      }
+      d.textContent = d.dataset.tamam;
+      d.classList.add("tamam");
+      if (kopyaDurum) kopyaDurum.textContent = `${d.dataset.tamam}: ${d.dataset.kopyala}`;
+      setTimeout(() => {
+        d.textContent = ilk;
+        d.classList.remove("tamam");
+      }, 2400);
+    });
+  });
+
   let bekliyor = false;
   const kaydir = () => {
     if (bekliyor) return;

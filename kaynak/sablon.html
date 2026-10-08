@@ -34,15 +34,17 @@
       <svg viewBox="31 20 450 472" aria-hidden="true"><path d="M243 20H131A100 100 0 0 0 31 120v210a100 100 0 0 0 100 100h112z"/><path d="M268 82h113a100 100 0 0 1 100 100v210a100 100 0 0 1-100 100H268z"/></svg>
       PAS
     </a>
-    <nav aria-label="{{menu_etiket}}">
+    <nav id="ana-menu" aria-label="{{menu_etiket}}">
       <a href="#aktarim">{{menu_aktarim}}</a>
       <a href="#nasil">{{menu_nasil}}</a>
       <a href="#uygulamalar">{{menu_uygulamalar}}</a>
       <a href="#yapay-zeka">{{menu_yz}}</a>
       <a href="#guvenlik">{{menu_guvenlik}}</a>
+      <a href="#ozellikler">{{menu_ozellikler}}</a>
     </nav>
     <a class="dil" href="{{diger_dil_bag}}" hreflang="{{diger_dil}}" lang="{{diger_dil}}">{{diger_dil_ad}}</a>
-    <a class="dugme-kucuk" href="mailto:{{eposta}}">{{iletisim_kisa}}</a>
+    <a class="dugme-kucuk" href="#iletisim">{{iletisim_kisa}}</a>
+    <button class="menu-dugme" type="button" aria-controls="ana-menu" aria-expanded="false" aria-label="{{menu_ac}}"><span></span><span></span></button>
   </div>
 </header>
 
@@ -54,7 +56,7 @@
     <h1 class="belir"><span class="satir">{{h1_1}}</span><span class="satir renkli">{{h1_2}}</span></h1>
     <p class="giris belir" style="--i:2">{{acilis_giris}}</p>
     <div class="dugmeler belir" style="--i:3">
-      <a class="dugme" href="mailto:{{eposta}}">{{gorusme}}</a>
+      <a class="dugme" href="#iletisim">{{gorusme}}</a>
       <a class="bag" href="#nasil">{{nasil_bag}}</a>
     </div>
   </div>
@@ -100,6 +102,72 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- öne çıkanlar: yatay kaydırıcı -->
+<section class="bolum one-cikanlar" id="one-cikanlar" aria-labelledby="oc-baslik">
+  <div class="kap"><h2 class="belir" id="oc-baslik">{{oc_h2}}</h2></div>
+  <div class="serit" tabindex="0" role="region" aria-roledescription="carousel" aria-label="{{oc_etiket}}">
+    <article class="vitrin vitrin-aktarim" aria-roledescription="slide" aria-label="1 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="buyuk-denklem"><b>50</b><i>=</i><b class="mavi">44</b><i>+</i><b class="turuncu">6</b><i>+</i><b class="yesil">0</b></div>
+        <small>{{ornek_veri}}</small>
+      </div>
+      <div class="vitrin-metin"><h3>{{v1_b}}</h3><p>{{v1_p}}</p></div>
+    </article>
+    <article class="vitrin vitrin-uygulama" aria-roledescription="slide" aria-label="2 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="simge-bulutu">
+          <span class="simge" style="background:oklch(0.6 0.2 257)">{{ik_satis}}</span>
+          <span class="simge" style="background:oklch(0.54 0.2 280)">{{ik_satinalma}}</span>
+          <span class="simge" style="background:oklch(0.7 0.13 228)">{{ik_masraf}}</span>
+          <span class="simge" style="background:oklch(0.63 0.22 10)">{{ik_izin}}</span>
+          <span class="simge" style="background:oklch(0.62 0.07 58)">{{ik_stok}}</span>
+          <span class="simge" style="background:oklch(0.7 0.16 55)">{{ik_fire}}</span>
+          <span class="simge" style="background:oklch(0.62 0.21 25)">{{ik_bakim}}</span>
+          <span class="simge" style="background:oklch(0.62 0.17 150)">{{ik_kalite}}</span>
+        </div>
+      </div>
+      <div class="vitrin-metin"><h3>{{v2_b}}</h3><p>{{v2_p}}</p></div>
+    </article>
+    <article class="vitrin vitrin-sor" aria-roledescription="slide" aria-label="3 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="balon soru">{{v3_soru}}</div>
+        <div class="balon cevap"><span class="cizgi"></span><span class="cizgi kisa"></span><small>{{v3_kaynak}}</small></div>
+      </div>
+      <div class="vitrin-metin"><h3>{{v3_b}}</h3><p>{{v3_p}}</p></div>
+    </article>
+    <article class="vitrin vitrin-guvenlik" aria-roledescription="slide" aria-label="4 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true"><span class="kalkan">{{ik_sunucu}}</span></div>
+      <div class="vitrin-metin"><h3>{{v4_b}}</h3><p>{{v4_p}}</p></div>
+    </article>
+    <article class="vitrin vitrin-birim" aria-roledescription="slide" aria-label="5 / 5">
+      <div class="vitrin-gorsel" aria-hidden="true">
+        <div class="birimler">
+          <div style="background:linear-gradient(160deg,oklch(0.6 0.2 257),oklch(0.52 0.2 265))"><b>{{yan_b1}}</b><span>{{p3_1}}</span></div>
+          <div style="background:linear-gradient(160deg,oklch(0.62 0.17 150),oklch(0.55 0.15 165))"><b>{{yan_b3}}</b><span>{{p3_3}}</span></div>
+          <div style="background:linear-gradient(160deg,oklch(0.7 0.16 55),oklch(0.62 0.18 40))"><b>{{yan_b4}}</b><span>{{p3_4}}</span></div>
+        </div>
+      </div>
+      <div class="vitrin-metin"><h3>{{v5_b}}</h3><p>{{v5_p}}</p></div>
+    </article>
+  </div>
+  <div class="kap serit-denetim">
+    <div class="noktalar">
+      <button type="button" aria-label="{{oc_git}} 1"></button>
+      <button type="button" aria-label="{{oc_git}} 2"></button>
+      <button type="button" aria-label="{{oc_git}} 3"></button>
+      <button type="button" aria-label="{{oc_git}} 4"></button>
+      <button type="button" aria-label="{{oc_git}} 5"></button>
+    </div>
+    <button class="oynat" type="button" data-duraklat="{{oc_duraklat}}" data-oynat="{{oc_oynat}}" aria-label="{{oc_duraklat}}"><span></span></button>
+  </div>
+  <div class="kap rakamlar">
+    <div class="belir" style="--i:0"><strong class="renkli">4</strong><p>{{r1}}</p></div>
+    <div class="belir" style="--i:1"><strong class="renkli">0</strong><p>{{r2}}</p></div>
+    <div class="belir" style="--i:2"><strong class="renkli">2</strong><p>{{r3}}</p></div>
+    <div class="belir" style="--i:3"><strong class="renkli">2</strong><p>{{r4}}</p></div>
   </div>
 </section>
 
@@ -222,6 +290,37 @@
       <div class="belir" style="--i:4">{{ik_birim}}<h3>{{g5_b}}</h3><p>{{g5_p}}</p></div>
       <div class="belir" style="--i:5">{{ik_onay}}<h3>{{g6_b}}</h3><p>{{g6_p}}</p></div>
     </div>
+    <figure class="sema belir" aria-labelledby="sema-baslik">
+      <figcaption id="sema-baslik">{{sema_baslik}}</figcaption>
+      <div class="sema-akis">
+        <div class="sema-uc"><b>{{sema_calisan_b}}</b><span>{{sema_calisan_p}}</span></div>
+        <div class="sema-ok"><span>{{sema_ok_ic}}</span></div>
+        <div class="sema-sunucu">
+          <b>{{sema_sunucu_b}}</b>
+          <div class="sema-cipler"><span class="ana-cip">PAS</span><span>{{sema_c2}}</span><span>{{sema_c3}}</span><span>{{sema_c4}}</span></div>
+          <small>{{sema_sunucu_not}}</small>
+        </div>
+        <div class="sema-ok dis"><span>{{sema_ok_dis}}</span></div>
+        <div class="sema-uc"><b>Claude</b><span>{{sema_claude_p}}</span></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- teknik özellikler -->
+<section class="bolum gri" id="ozellikler">
+  <div class="kap">
+    <h2 class="belir">{{oz_h2}}</h2>
+    <dl class="teknik">
+      <div class="belir"><dt>{{t1_b}}</dt><dd>{{t1_p}}</dd></div>
+      <div class="belir"><dt>{{t2_b}}</dt><dd>{{t2_p}}</dd></div>
+      <div class="belir"><dt>{{t3_b}}</dt><dd>{{t3_p}}</dd></div>
+      <div class="belir"><dt>{{t4_b}}</dt><dd>{{t4_p}}</dd></div>
+      <div class="belir"><dt>{{t5_b}}</dt><dd>{{t5_p}}</dd></div>
+      <div class="belir"><dt>{{t6_b}}</dt><dd>{{t6_p}}</dd></div>
+      <div class="belir"><dt>{{t7_b}}</dt><dd>{{t7_p}}</dd></div>
+      <div class="belir"><dt>{{t8_b}}</dt><dd>{{t8_p}}</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -230,20 +329,45 @@
   <div class="kap">
     <h2 class="belir">{{kap_h2}}</h2>
     <p class="giris belir" style="--i:1">{{kap_giris}}</p>
-    <div class="dugmeler belir" style="--i:2">
-      <a class="dugme" href="mailto:{{eposta}}">{{gorusme}}</a>
+    <ol class="surec">
+      <li class="belir" style="--i:0"><span class="no renkli">1</span><h3>{{s1_b}}</h3><p>{{s1_p}}</p></li>
+      <li class="belir" style="--i:1"><span class="no renkli">2</span><h3>{{s2_b}}</h3><p>{{s2_p}}</p></li>
+      <li class="belir" style="--i:2"><span class="no renkli">3</span><h3>{{s3_b}}</h3><p>{{s3_p}}</p></li>
+    </ol>
+    <div class="dugmeler belir" style="--i:3">
+      <button class="dugme kopyala" type="button" data-kopyala="{{eposta}}" data-tamam="{{kopyalandi}}">{{kopyala}}</button>
       <a class="bag" href="mailto:{{eposta}}">{{eposta}}</a>
     </div>
+    <p class="kopya-durum" role="status" aria-live="polite"></p>
   </div>
 </section>
 
 </main>
 
 <footer class="alt">
-  <div class="kap">
+  <div class="kap alt-ust">
+    <div>
+      <a class="logo" href="{{kok_bag}}" aria-label="PAS"><svg viewBox="31 20 450 472" aria-hidden="true"><path d="M243 20H131A100 100 0 0 0 31 120v210a100 100 0 0 0 100 100h112z"/><path d="M268 82h113a100 100 0 0 1 100 100v210a100 100 0 0 1-100 100H268z"/></svg>PAS</a>
+      <p>{{alt_tanim}}</p>
+    </div>
+    <nav aria-label="{{alt_bolumler}}">
+      <b>{{alt_bolumler}}</b>
+      <a href="#aktarim">{{menu_aktarim}}</a>
+      <a href="#nasil">{{menu_nasil}}</a>
+      <a href="#uygulamalar">{{menu_uygulamalar}}</a>
+      <a href="#yapay-zeka">{{menu_yz}}</a>
+      <a href="#guvenlik">{{menu_guvenlik}}</a>
+      <a href="#ozellikler">{{menu_ozellikler}}</a>
+    </nav>
+    <div>
+      <b>{{alt_iletisim}}</b>
+      <a href="mailto:{{eposta}}">{{eposta}}</a>
+      <a href="{{diger_dil_bag}}" hreflang="{{diger_dil}}" lang="{{diger_dil}}">{{diger_dil_ad}}</a>
+    </div>
+  </div>
+  <div class="kap alt-son">
     <span>© 2026 PAS · {{claude}}</span>
     <span>{{cerez}}</span>
-    <a href="{{diger_dil_bag}}" hreflang="{{diger_dil}}" lang="{{diger_dil}}">{{diger_dil_ad}}</a>
   </div>
 </footer>
 </body>
