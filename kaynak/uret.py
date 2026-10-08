@@ -8,6 +8,7 @@ durdurur (yarım çevrilmiş sayfa yayına çıkmaz). Metinler HTML olarak yazı
 
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -22,8 +23,13 @@ YER = re.compile(r"\{\{([a-z0-9_]+)\}\}")
 def uret() -> None:
     sablon = (KOK / "kaynak" / "sablon.html").read_text(encoding="utf-8")
     anahtarlar = set(YER.findall(sablon))
+    # Önbellek kırıcı: CSS/JS içeriği değişince adres değişir (Cloudflare tarayıcıya 4 saat önbellek verir).
+    surumler = {
+        f"v_{ad}": hashlib.sha256((KOK / 'assets' / f'site.{ad}').read_bytes()).hexdigest()[:10]
+        for ad in ("css", "js")
+    }
     for dil, metin in METINLER.items():
-        degerler = {**ORTAK, **metin}
+        degerler = {**ORTAK, **metin, **surumler}
         eksik = anahtarlar - set(degerler)
         fazla = set(metin) - anahtarlar
         if eksik or fazla:
