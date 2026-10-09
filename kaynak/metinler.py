@@ -223,8 +223,8 @@ TR: dict[str, str] = {
     "hk_yer_p": "İstanbul, Türkiye",
     "hk_asama_b": "Aşama",
     "hk_asama_p": "Ürün hazır; son kontrolleri yapıp ilk müşteri kurulumuna hazırlanıyoruz.",
-    "hk_gel_b": "Geliştirme",
-    "hk_gel_p": "PAS'ı Claude Code ile geliştiriyoruz.",
+    "hk_gel_b": "Geliştiren",
+    "hk_gel_p": "Şamil Kerem Yapar, Claude Code ile",
     "hk_rol": "Kurucu ve geliştirici",
     "hk_bio": "Yıldız Teknik Üniversitesi İstatistik Bölümü öğrencisi.",
 }
@@ -417,8 +417,8 @@ EN: dict[str, str] = {
     "hk_yer_p": "Istanbul, Türkiye",
     "hk_asama_b": "Stage",
     "hk_asama_p": "The product is ready; we are running final checks and preparing our first customer installation.",
-    "hk_gel_b": "Built with",
-    "hk_gel_p": "We build PAS with Claude Code.",
+    "hk_gel_b": "Built by",
+    "hk_gel_p": "Şamil Kerem Yapar, with Claude Code",
     "hk_rol": "Founder and developer",
     "hk_bio": "Statistics student at Yıldız Technical University.",
 }
